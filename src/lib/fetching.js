@@ -2,3 +2,8 @@ export const getCarts = async () => {
     const res = await fetch(`https://pixgen2.vercel.app/data.json`)
     return res.json()
 }
+
+export const getCategory = async () => {
+    const res = await fetch(`https://pixgen2.vercel.app/category.json`)
+    return res.json()
+}
