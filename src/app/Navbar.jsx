@@ -23,20 +23,20 @@ const Navbar = () => {
           <h3 className="font-black text-lg">pixgen.</h3>
         </div>
 
-        <ul className="flex items-center gap-5 text-sm">
+        <ul className="flex items-center gap-5 text-sm font-semibold">
           <li>
-            {/* <Link href={"/"}>Home</Link> */}
-            <Link href={"/"}>{p==='/' ? <Button className='bg-linear-to-r from-pink-500 via-purple-500 bg-red-500'>Home</Button>:<Button variant="outline">Home</Button>}</Link>
+            <Link href={"/"}>{p==='/' ? <Button size="sm" className='bg-linear-to-r from-green-500 via-blue-500 bg-green-500'>Home</Button>:<button>Home</button>}</Link>
           </li>
           <li>
-            <Link href={"/all-photos"}>All Photos</Link>
+            <Link href={"/all-photos"}>{p==='/all-photos' ? <Button size="sm" className='bg-linear-to-r from-green-500 via-blue-500 bg-green-500'>All Photos</Button>:<button>All Photos</button>}</Link>
           </li>
           <li>
-            <Link href={"/pricing"}>Pricing</Link>
+            <Link href={"/pricing"}>{p==='/pricing' ? <Button size="sm" className='bg-linear-to-r from-green-500 via-blue-500 bg-green-500'>Pricing</Button>:<button>Pricing</button>}</Link>
           </li>
           <li>
-            <Link href={"/profile"}>Profile</Link>
+            <Link href={"/profile"}>{p==='/profile' ? <Button size="sm" className='bg-linear-to-r from-green-500 via-blue-500 bg-green-500'>Profile</Button>:<button>Profile</button>}</Link>
           </li>
+
         </ul>
 
         <div className="flex gap-4">
