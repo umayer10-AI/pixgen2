@@ -1,15 +1,20 @@
 "use client"
 import { Check } from '@gravity-ui/icons';
 import { Button, Card, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const SignUpPage = () => {
 
     const {register,handleSubmit,formState: { errors }} = useForm()
+    const [s,setS] = useState(false)
 
     const a = (v) => {
         console.log(v)
+
+        
+
     }
 
     return (
@@ -51,7 +56,7 @@ const SignUpPage = () => {
           isRequired
           minLength={8}
           name="password"
-          type="password"
+          type={s ? "text":"password"}
           validate={(value) => {
             if (value.length < 8) {
               return "Password must be at least 8 characters";
@@ -68,6 +73,7 @@ const SignUpPage = () => {
         >
           <Label>Password</Label>
           <Input placeholder="Enter your password"  {...register("password")}/>
+          <span onClick={() => setS(!s)}>{s? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}</span>
           <Description>
             Must be at least 8 characters with 1 uppercase and 1 number
           </Description>
