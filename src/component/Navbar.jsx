@@ -9,7 +9,6 @@ const Navbar = () => {
 
     const p = usePathname()
     const { data: session } = authClient.useSession()
-    console.log(session)
     const user = session?.user
 
   return (
