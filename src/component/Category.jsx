@@ -1,17 +1,17 @@
 import { getCategory } from '@/lib/fetching';
 import { Button } from '@heroui/react';
+import Link from 'next/link';
 import React from 'react';
 
 const Category = async () => {
 
     const data = await getCategory()
-    // console.log(data)
 
     return (
         <div className='flex items-center justify-center gap-2 mb-5'>
             {
                 data.map(v => (
-                    <Button key={v.id} variant='outline'>{v.name}</Button>
+                    <Link href={`?category=${v.name}`} key={v.id}><Button variant='outline'>{v.name}</Button></Link>
                 ))
             }
         </div>
