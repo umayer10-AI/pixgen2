@@ -5,7 +5,7 @@ import React from 'react';
 const Category = async () => {
 
     const data = await getCategory()
-    console.log(data)
+    // console.log(data)
 
     return (
         <div className='flex items-center justify-center gap-2 mb-5'>

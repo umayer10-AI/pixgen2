@@ -3,9 +3,12 @@ import Category from '@/component/Category';
 import { getCarts } from '@/lib/fetching';
 import React from 'react';
 
-const page = async () => {
+const page = async ({searchParams}) => {
 
+    const {category} = await searchParams
     const data = await getCarts()
+    const allData = data.filter(v => v.category === category)
+    console.log(allData)
 
     return (
         <div>
