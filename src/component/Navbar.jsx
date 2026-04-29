@@ -50,14 +50,14 @@ const Navbar = () => {
                         <Avatar.Image alt="John Doe" referrerPolicy="no-referrer" src={user?.image} />
                         <Avatar.Fallback>{user?.name?.charAt(0)}</Avatar.Fallback>
                       </Avatar>
-                      <Button size="sm" variant="danger">Sign Out</Button>
+                      <Button onClick={async() => await authClient.signOut()} size="sm" variant="danger">Sign Out</Button>
                   </div>
-             : <ul className="flex items-center  text-sm">
+             : <ul className="flex items-center gap-2 text-sm">
                 <li>
-                  <Link href={"/signup"}>SignUp</Link>
+                  <Link href={"/signup"}><Button className={'bg-linear-to-r from-pink-500 via-purple-500 bg-red-500'}>SignUp</Button></Link>
                 </li>
                 <li>
-                  <Link href={"/signin"}>SignIn</Link>
+                  <Link href={"/signin"}><Button variant="secondary">SignIn</Button></Link>
                 </li>
               </ul>
           }
