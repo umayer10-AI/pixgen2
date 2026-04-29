@@ -8,9 +8,10 @@ const CartList = ({p}) => {
     return (
         <div className='border rounded-xl shadow-xl p-4 space-y-3'>
             <div className='relative aspect-square'>
-                <Image fill src={p.imageUrl} 
+                <Image fill
+                src={p.imageUrl} 
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                 alt='photo' className='object-cover rounded-xl'></Image>
+                alt='photo' className='object-cover rounded-xl'></Image>
             </div>
             <h2 className='font-bold'>{p.title}</h2>
             <div className='font-semibold flex gap-5'>
