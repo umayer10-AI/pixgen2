@@ -5,7 +5,6 @@ import CartList from './CartList';
 const Carts = async () => {
 
     const data = await getCarts()
-    // console.log(data)
 
     return (
         <div>
