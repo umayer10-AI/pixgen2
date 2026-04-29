@@ -45,10 +45,11 @@ const Navbar = () => {
         <div className="flex gap-4">
           {
              user? <div className="flex items-center gap-3">
+                      <Link href={'/profile'}>
                       <Avatar size="sm">
                         <Avatar.Image alt="John Doe" referrerPolicy="no-referrer" src={user?.image} />
                         <Avatar.Fallback>{user?.name?.charAt(0)}</Avatar.Fallback>
-                      </Avatar>
+                      </Avatar></Link>
                       <Button onClick={async() => await authClient.signOut()} size="sm" variant="danger">Sign Out</Button>
                   </div>
              : <ul className="flex items-center gap-2 text-sm">
