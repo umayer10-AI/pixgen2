@@ -6,21 +6,19 @@ import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { FcGoogle } from 'react-icons/fc';
 
-const SignUpPage = () => {
+const SignInPage = () => {
 
     const {register,handleSubmit,formState: { errors }} = useForm()
     const [s,setS] = useState(false)
-    const router = useRouter()
 
     const a = async (v) => {
         console.log(v)
 
-        const { data, error } = await authClient.signUp.email({
-            name: v.name,
+        const { data, error } = await authClient.signIn.email({
             email: v.email,
             password: v.password,
-            image: v.url,
             callbackURL: "/",
         });
 
@@ -28,7 +26,6 @@ const SignUpPage = () => {
 
         if(data){
             alert("Data SuccessFully")
-            router.push('/')
         }
         if(error){
             alert(error.message)
@@ -42,17 +39,7 @@ const SignUpPage = () => {
       <h1 className="text-center text-2xl font-bold">Sign Up</h1>
 
       <Form onSubmit={handleSubmit(a)} className="flex w-80 lg:w-96 mx-auto flex-col gap-4">
-        <TextField isRequired name="name" type="text">
-          <Label>Name</Label>
-          <Input placeholder="Enter your name"  {...register("name")}/>
-          <FieldError />
-        </TextField>
 
-        <TextField isRequired name="image" type="text">
-          <Label>Image URL</Label>
-          <Input placeholder="Image URL"  {...register("url")}/>
-          <FieldError />
-        </TextField>
 
         <TextField
           isRequired
@@ -100,18 +87,17 @@ const SignUpPage = () => {
         </TextField>
 
         <div className="flex gap-2">
-          <Button className={'bg-linear-to-r from-green-500 via-blue-500 bg-green-500'} type="submit">
+          <Button className={'bg-linear-to-r from-green-500 via-blue-500 bg-green-500 w-full'} type="submit">
             <Check />
             Submit
           </Button>
-          <Button type="reset" variant="secondary">
-            Reset
-          </Button>
         </div>
       </Form>
+        <h2 className='text-center font-semibold'>Or</h2>
+        <Button variant='outline' className={'w-80 lg:w-96 mx-auto shadow'}><FcGoogle />Sign In With Google</Button>
     </Card>
         </div>
     );
 };
 
-export default SignUpPage;
+export default SignInPage;
