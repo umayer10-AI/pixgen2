@@ -22,7 +22,6 @@ const page = async ({params}) => {
 
       <div className="grid md:grid-cols-2 gap-10 items-start">
 
-        {/* 🔥 Image Section */}
         <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-lg">
           <Image
             src={p.imageUrl}
@@ -32,26 +31,21 @@ const page = async ({params}) => {
           />
         </div>
 
-        {/* 🔥 Details Section */}
         <div className="space-y-5">
 
-          {/* Title */}
           <h1 className="text-3xl font-bold">{p.title}</h1>
 
-          {/* Category + Model */}
           <div className="flex flex-wrap gap-2">
             <Chip>{p.category}</Chip>
             <Chip variant="flat">{p.model}</Chip>
             <Chip variant="flat">{p.resolution}</Chip>
           </div>
 
-          {/* Prompt */}
           <div>
             <h3 className="font-semibold mb-1">Prompt</h3>
             <p className="text-gray-600">{p.prompt}</p>
           </div>
 
-          {/* Tags */}
           <div className="flex flex-wrap gap-2">
             {
               p.tags.map((tag, i) => (
@@ -62,7 +56,6 @@ const page = async ({params}) => {
             }
           </div>
 
-          {/* Stats */}
           <div className="flex items-center gap-6 text-gray-700">
             <span className="flex items-center gap-2">
               <FaHeart className="text-pink-500" /> {p.likes}
@@ -72,9 +65,8 @@ const page = async ({params}) => {
             </span>
           </div>
 
-          {/* Buttons */}
           <div className="flex gap-4 pt-4">
-            <Button className="bg-linear-to-r from-pink-500 via-purple-500 to-red-500 text-white">
+            <Button className="bg-linear-to-r from-green-500 via-blue-500 to-green-500 text-white">
               Download
             </Button>
             <Button variant="secondary">
